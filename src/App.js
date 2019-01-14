@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Toggle from './ToggleRenderProps';
+import Toggle from './ToggleRPC';
 
 class App extends Component {
   render() {
@@ -12,12 +12,16 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <Toggle render={({on, toggle})=> (
+          <Toggle>
+          {({on, toggle})=> (
             <div>{on && <h1>Show Me</h1>}
             
             <button onClick={toggle}>Show / Hide</button>
             </div>
-          )} />
+          )
+          }
+          </Toggle>
+
           
         </header>
       </div>
